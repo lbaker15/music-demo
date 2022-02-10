@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter as Router, Switch, Route, useLocation, useHistory} from 'react-router-dom';
+import {HashRouter as Router, Switch, Route, useLocation, useHistory} from 'react-router-dom';
 import React from 'react';
 import Cards from './components/cards';
 import Nav from './components/nav';
