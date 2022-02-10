@@ -6,7 +6,7 @@ class Title extends React.Component {
         return (
             <React.Fragment>
                 <div className="title text-center w-full">
-                    The Fiery Bird
+                    The Music Venue
                 </div>
             </React.Fragment>
         )
