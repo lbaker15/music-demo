@@ -9,15 +9,15 @@ class NewsItem extends React.Component {
     }
     componentDidMount() {
         const {item, bg, i, handleShow} = this.props;
-        let c = (String(item.shortcontent.props.children[0]).substring(0,200))
+        let c = (String(item.shortcontent.val).substring(0,200))
         this.setState({
             content: c
         })
-        
     }
 
     render() {
         const {item, bg, i, handleShow} = this.props;
+        console.log(item)
         // console.log(item)
         let num = i * 550;
         const {open, content} = this.state;
@@ -25,9 +25,10 @@ class NewsItem extends React.Component {
             <React.Fragment>
                 <div className={"news-item py-10 " + bg}>
                     <h1 className="mb-2">{item.title}</h1>
+                    
                     <h2 className="pb-4">Category</h2>
                     <h4 className="px-10 root">   
-                    {content}
+                    {content}...
                     </h4>
                     <h5 className="hidden">{}</h5>
                     <button 

@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter as Router, Switch, Route, useLocation, useHistory} from 'react-router-dom';
+import {HashRouter as Router, Switch, Route, useLocation, useHistory} from 'react-router-dom';
 import React from 'react';
 import Cards from './components/cards';
 import Nav from './components/nav';
@@ -13,6 +13,7 @@ import Touch from './components/get-in-touch';
 import Contact from './components/contact';
 import News from './components/news';
 import Footer from './components/footer';
+import Intro from './components/intro';
 
 
 function App() {
@@ -27,23 +28,37 @@ function App() {
         <AnimatePresence exitBeforeEnter={false} >
           <Background key="bg" />
           <Nav key="nav" />
-          <RotateElement key="rotate" />
-          <Title key="title" />
+          
+          
+        
         <Switch location={location} key={location.pathname}>
+          <Route path="/featured-events">
+            <Intro key="intro" />
+          </Route>
           <Route path="/home">
+            <RotateElement key="rotate" />
+            <Title key="title" />
             <Cards key="cards" />
             <Touch />
           </Route>
           <Route path="/events">
+            <RotateElement key="rotate" />
+            <Title key="title" />
             <Events key="events" />
           </Route>
           <Route path="/event-details/:id">
+            <RotateElement key="rotate" />
+            <Title key="title" />
             <EventDetails key="deets" />
           </Route>
           <Route path="/news">
+            <RotateElement key="rotate" />
+            <Title key="title" />
             <News key="new" />
           </Route>
           <Route path="/contact">
+            <RotateElement key="rotate" />
+            <Title key="title" />
             <Contact />
           </Route>
         </Switch>

@@ -6,16 +6,27 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 import parse from 'html-react-parser';
 
-const query = `{
-    newsItemCollection {
-        items {
-            title,
-            content {
-              json
+const query = `
+    {
+        newsItemCollection {
+          items {
+              title,
+              content {
+                json
+              },
+              image {
+                fileName,
+                url
+              },
+             imageTestCollection {
+              items {
+                url
+              }
             }
-        } 
+          } 
+      }
     }
-}`
+`
 
 class News extends React.Component {
     state = {num: 0, open: false, item: {}, bg:'', news: []}
@@ -38,40 +49,44 @@ class News extends React.Component {
             
             Promise.all([items.map((item, i) => {
                 let description = [];
-                console.log(item)
+                // console.log(item)
+                let temp = {val: ''} 
                 Promise.all([
                 item.content.json.content.map((x, i) => {
                    let {value} = x;
                    let a = ( documentToReactComponents(x) )
                         
-
-                //    item.shortcontent = {} 
-                //    const checker = (num) => {
-                //         let a = ( documentToReactComponents(x) )
-                //         // console.log('a', a)
-                //         if (i === 0) {
-                //             let val = a.props.children[num];
-                //             console.log('val', val)
-                //             item.shortcontent = {...item.shortcontent, val};
-                //             console.log('sc', item.shortcontent)
-                //             if (item.shortcontent.val.length < 200) {
-                //                 //CHECK FOR A.PROPS.CHILDREN 1 ETC
-                //                 //FIRE WHEN I === 1
-                //                 console.log('fired')
-                //                 num += 1
-                //                 checker(num)
-                //             }
-                //         }
-                //     }
-                //     checker(0)
-
-                    if (i === 0) {
-                        item.shortcontent = a;
-                        if (a.props.children[0].length < 200) {
-                            //CHECK FOR A.PROPS.CHILDREN 1 ETC
-                            //FIRE WHEN I === 1
-                        }
+                   const checker = () => {
+                        let a = ( documentToReactComponents(x) )
+                        //NEED CONDITION FOR IF VAL LENGTH UNDER 200 BUT ON LAST LOOP/MAP
+                        //MUST RETURN ITEM.SHORTCONTENT
+                        if (temp.val.length < 200) {
+                            let val = a.props.children[0];
+                            temp = {...temp, val};
+                            // if (temp.val.length > 200) {
+                            item.shortcontent = temp;
+                            // }
+                        } else {
+                            item.shortcontent = temp;
+                        } 
+                        // console.log('a', num, i)
+                        // if (i === num) {
+                        //     let val = a.props.children[0];
+                        //     // console.log('val', val)
+                        //     temp = {...temp, val};
+                        //     console.log('temp', temp, i)
+                        //     if (temp.val.length < 200) {
+                        //         //CHECK FOR A.PROPS.CHILDREN 1 ETC
+                        //         //FIRE WHEN I === 1
+                        //         console.log('fired', temp)
+                        //         num += 1
+                        //         checker(num)
+                        //     } else {
+                        //         item.shortcontent = temp;
+                        //     }
+                        // }
                     }
+                    checker()
 
                 })
                 ])
@@ -145,6 +160,11 @@ class News extends React.Component {
                         onClick={this.handleShow}
                         className="close">X</button></div>
                         <h1 className="mb-2 text-center">{item.title}</h1>
+                        {item.image !== null && (
+                            <div
+                            className="flex w-full justify-center mb-4"
+                            ><img src={item.image.url} /></div>
+                        )}
                         <h2 className="pb-4 text-center">Category</h2>
                         <h4 className="px-10">   
                         {documentToReactComponents(item.content.json)}  
@@ -158,7 +178,7 @@ class News extends React.Component {
                             let num = i + 1;
                             let bg = (num % 4 === 0) ? 'bg-orange' : (num % 4 === 1) ?  'bg-aqua' : (num % 4 === 2) ? 'bg-yellow2' : 'bg-purple'
                            
-                            return <NewsItem key={i} item={item} bg={bg} i={i} handleShow={this.handleShow} />
+                           return <NewsItem key={i} item={item} bg={bg} i={i} handleShow={this.handleShow} />
                         })}
 
                         

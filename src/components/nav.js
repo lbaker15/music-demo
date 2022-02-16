@@ -8,6 +8,7 @@ class Nav extends React.Component {
                 <div class="nav">
                     <div class="inner">
                         <Link to="/home">About</Link>
+                        <Link to="/featured-events">Featured</Link>
                         <Link to="/events">Events</Link>
                         <Link to="/news">News</Link>
                         <Link to="/contact">Contact</Link>
