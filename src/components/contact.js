@@ -28,15 +28,15 @@ class Contact extends React.Component {
                                     Feel free to reach out if you are interested in using our venue, or to simply have a chat.
                                 </div>
                                 <div className="col-span-2 word-wrap col-start-3 text-edit-2 text-right pr-2 font-semibold">
-                                info@fierybirdvenue.org.uk.
+                                email@email.com
                                 </div>
                             </div>
                             <div className="grid grid-cols-4 border-top-e pt-8 pb-8">
                                 <div className="col-span-2 md:col-span-1 pr-4 md:pr-0 text-edit-2 pl-2">
-                                The Fiery Bird, Albion House, 3 High St, Woking, Surrey, GU21 6BD
+                                Address line 1, address line 2, HG2 443
                                 </div>
                                 <div className="col-span-2 col-start-3 text-edit-2 text-right pr-2 font-semibold word-wrap">
-                                https://www.facebook.com/Fierybirdlivemusicvenue/
+                                Facebook url
                                 </div>
                                 
                             </div>
