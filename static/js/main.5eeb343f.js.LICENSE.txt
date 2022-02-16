@@ -37,6 +37,12 @@ OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
 
+/**
+ * @license glsl-canvas-js v0.2.9
+ * (c) 2022 Luca Zampetti <lzampetti@gmail.com>
+ * License: MIT
+ */
+
 /** @license React v0.20.2
  * scheduler.production.min.js
  *
