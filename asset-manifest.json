@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/music-demo/static/css/main.23a57629.css",
-    "main.js": "/music-demo/static/js/main.5eeb343f.js",
+    "main.css": "/music-demo/static/css/main.df5623f4.css",
+    "main.js": "/music-demo/static/js/main.84ffcd26.js",
     "static/js/787.4130810d.chunk.js": "/music-demo/static/js/787.4130810d.chunk.js",
     "static/media/FieryBirdnew1.png": "/music-demo/static/media/FieryBirdnew1.84b1497672f8f5be5f53.png",
     "static/media/4.jpg": "/music-demo/static/media/4.13bfdf183d94375f6df8.jpg",
@@ -12,12 +12,12 @@
     "static/media/mic.jpg": "/music-demo/static/media/mic.dbaf57373345f6c98b1c.jpg",
     "static/media/2.jpg": "/music-demo/static/media/2.aa28158f88369f8e94bd.jpg",
     "index.html": "/music-demo/index.html",
-    "main.23a57629.css.map": "/music-demo/static/css/main.23a57629.css.map",
-    "main.5eeb343f.js.map": "/music-demo/static/js/main.5eeb343f.js.map",
+    "main.df5623f4.css.map": "/music-demo/static/css/main.df5623f4.css.map",
+    "main.84ffcd26.js.map": "/music-demo/static/js/main.84ffcd26.js.map",
     "787.4130810d.chunk.js.map": "/music-demo/static/js/787.4130810d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.23a57629.css",
-    "static/js/main.5eeb343f.js"
+    "static/css/main.df5623f4.css",
+    "static/js/main.84ffcd26.js"
   ]
 }
